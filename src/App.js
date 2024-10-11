@@ -1,4 +1,4 @@
-// App.js
+// src/App.js
 
 import React, { useState, useEffect } from 'react';
 import './App.css';
@@ -8,6 +8,7 @@ import BotaoLuz from './components/BotaoLuz/BotaoLuz';
 import MusicPlayer from './components/MusicPlayer/MusicPlayer';
 import BotaoEquipes from './components/BotaoEquipes/BotaoEquipes';
 import EquipesParticipantes from './components/EquipesParticipantes/EquipesParticipantes';
+import Fireworks from './components/Fireworks/Fireworks'; // Importação atualizada
 
 // Importe as imagens de background
 import background1 from './assets/background1.png';
@@ -44,7 +45,7 @@ function App() {
         clearInterval(intervalo);
         setTrocaBackgroundFinalizada(true);
       }
-    }, 2000);
+    }, 800);
 
     return () => clearInterval(intervalo);
   }, [luzAcesa]);
@@ -66,13 +67,14 @@ function App() {
       )}
       {luzAcesa && (
         <>
-          <MusicPlayer />
+          <MusicPlayer startPlaying={true} /> {/* Passamos startPlaying como true */}
         </>
       )}
       {trocaBackgroundFinalizada && !mostrarEquipes && (
         <BotaoEquipes onClick={handleMostrarEquipes} />
       )}
       {mostrarEquipes && <EquipesParticipantes />}
+      {mostrarEquipes && <Fireworks />} {/* Renderização Condicional dos Fogos de Artifício */}
     </div>
   );
 }

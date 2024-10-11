@@ -1,6 +1,6 @@
 /* BotaoEquipes.css */
 
-.botao-equipes {
+/* .botao-equipes {
   position: absolute;
   bottom: 50%;
   right: 41%;
@@ -16,4 +16,54 @@
 
 .botao-equipes:hover {
   background-color: #f0f0f0;
+} */
+
+.botao-equipes {
+  top: 394px;
+  left: 855px;
+  border: none;
+  border-radius: 4px;
+  text-shadow: 0px 0px 10px rgba(7, 8, 63, 0.48);
+  overflow: hidden;
+  padding: 20px 50px 20px 70px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  position: relative;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  width: 16%;
+  -webkit-transition: background-position .7s,box-shadow .4s;
+  transition: background-position .7s,box-shadow .4s;
+  background-size: 110%;
+  font-family: 'Oswald', sans-serif;
+}
+
+.botao-equipes:hover {
+  background-position: 10% 80%;
+}
+
+.botao-equipes {
+  box-shadow: 0px 0px 0px 2px rgba(17, 14, 150, 0.16) inset, 0px 0px 10px 0px #05286e;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#05286e), to(rgba(78, 75, 255, 0.24)));
+  background-image: linear-gradient(to bottom, #0556fa69, rgba(3, 0, 201, 0.459)), url("../../assets/cyber/backg_cw.png");
+  animation: glow 1.5s infinite;
+  animation-play-state: running;
+}
+
+.botao-equipes:hover {
+  box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.16) inset, 0px 0px 30px 0px #ffffff;
+  animation-play-state: paused;
+}
+
+@keyframes glow{
+  0%{
+  box-shadow: 5px 5px 20px rgb(255, 255, 255),-5px -5px 20px rgb(255, 255, 255);}
+  
+  50%{
+  box-shadow: 5px 5px 20px rgb(3, 19, 167),-5px -5px 20px rgb(3, 19, 167)
+  }
+  100%{
+  box-shadow: 5px 5px 20px rgb(255, 255, 255),-5px -5px 20px rgb(255, 255, 255)
+  }
 }

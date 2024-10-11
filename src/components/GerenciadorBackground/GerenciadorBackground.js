@@ -24,10 +24,10 @@ function GerenciadorBackground({ luzAcesa, onTrocaFinalizada }) {
         clearInterval(intervalo);
         onTrocaFinalizada();
       }
-    }, 2000); // Troca de imagem a cada 2 segundos
+    }, 500); // Reduzido de 2000ms para 1000ms (1 segundo)
 
     return () => clearInterval(intervalo);
-  }, [luzAcesa, onTrocaFinalizada]);
+  }, [luzAcesa, backgrounds, onTrocaFinalizada]);
 
   return (
     <div className="background-container">

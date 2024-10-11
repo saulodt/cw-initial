@@ -1,0 +1,11 @@
+.fireworks-container {
+  position: absolute;
+  top: 464px;
+  left: 570px;
+  width: 46%;
+  height: 50%;
+  pointer-events: none; /* Permite que eventos de mouse passem através deste elemento */
+  z-index: 10; /* Ajuste conforme necessário para que os fogos apareçam acima de outros elementos */
+}
+
+  

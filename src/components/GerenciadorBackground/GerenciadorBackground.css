@@ -1,3 +1,5 @@
+/* src/components/GerenciadorBackground/GerenciadorBackground.css */
+
 .background-container {
   position: absolute;
   top: 0;
@@ -15,58 +17,83 @@
   height: 100%;
   background-size: cover;
   background-position: center;
+  opacity: 0; /* Inicialmente invisível */
+  transition: opacity 1s ease; /* Transição suave para opacidade */
 }
+
+.background-layer.layer-0 {
+  opacity: 1; /* Primeira imagem sempre visível */
+  z-index: 1;
+}
+
+.background-layer.layer-1,
+.background-layer.layer-2,
+.background-layer.layer-3,
+.background-layer.layer-4 {
+  opacity: 0;
+  z-index: 0;
+}
+
+/* Atualizar as animações para uma duração mais rápida */
 
 /* Animações para cada camada */
 .layer-1 {
-  animation: reveal1 4s forwards;
+  animation: reveal1 0.5s forwards; /* Reduzido de 4s para 1.5s */
 }
 
 .layer-2 {
-  animation: reveal2 4s forwards;
+  animation: reveal2 0.5s forwards; /* Reduzido de 4s para 1.5s */
 }
 
 .layer-3 {
-  animation: reveal3 4s forwards;
+  animation: reveal3 0.5s forwards; /* Reduzido de 4s para 1.5s */
 }
 
 .layer-4 {
-  animation: reveal4 4s forwards;
+  animation: reveal4 0.5s forwards; /* Reduzido de 4s para 1.5s */
 }
 
 /* Definir os keyframes para cada animação */
 @keyframes reveal1 {
   from {
     clip-path: circle(0% at 50% 50%);
+    opacity: 0;
   }
   to {
     clip-path: circle(150% at 50% 50%);
+    opacity: 1;
   }
 }
 
 @keyframes reveal2 {
   from {
     clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+    opacity: 0;
   }
   to {
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    opacity: 1;
   }
 }
 
 @keyframes reveal3 {
   from {
     clip-path: inset(100% 0% 0% 0%);
+    opacity: 0;
   }
   to {
     clip-path: inset(0% 0% 0% 0%);
+    opacity: 1;
   }
 }
 
 @keyframes reveal4 {
   from {
     clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+    opacity: 0;
   }
   to {
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    opacity: 1;
   }
 }

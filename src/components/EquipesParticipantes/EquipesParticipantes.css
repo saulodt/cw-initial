@@ -1,47 +1,97 @@
-/* EquipesParticipantes.css */
+/* src/components/EquipesParticipantes/EquipesParticipantes.css */
 
 .equipes-participantes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    max-width: 800px;
-    margin: 10% auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+}
+
+.equipes-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 colunas para duas fileiras */
+  gap: 20px;
+  max-width: 800px; /* Ajuste conforme necessário */
+  margin: 150px auto;
+}
+
+.equipe-button {
+  background: none;
+  border: none;
+  margin: 0;
+  opacity: 0; /* Começa invisível */
+  transition: opacity 1s ease, transform 0.3s ease;
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+}
+
+.equipe-button.visible {
+  opacity: 1; /* Torna visível com transição */
+}
+
+.equipe-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.5; /* Opacidade inicial da imagem */
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.equipe-button:hover img {
+  transform: scale(1.1);
+  opacity: 1;
+  /* box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); */
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
+  to {
+    opacity: 1; /* Alterado para 1 para que o botão fique totalmente visível */
+  }
+}
+
+/* Responsividade */
+
+@media (max-width: 1200px) {
+  .equipes-grid {
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 992px) {
+  .equipes-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas para telas menores */
+  }
+
   .equipe-button {
-    background: none;
-    border: none;
-    margin: 10px;
-    opacity: 0; /* Começa invisível */
-    animation: fadeIn 1s forwards;
-    cursor: pointer;
-    transition: transform 0.3s, opacity 0.3s;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
   }
-  
-  .equipe-button img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    opacity: 0.5; /* Opacidade inicial da imagem */
-    transition: transform 0.3s, opacity 0.3s;
+}
+
+@media (max-width: 768px) {
+  .equipes-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas para tablets */
   }
-  
-  .equipe-button:hover img {
-    transform: scale(1.1);
-    opacity: 1;
-    /* box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); */
-    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+
+  .equipe-button {
+    width: 70px;
+    height: 70px;
   }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1; /* Alterado para 1 para que o botão fique totalmente visível */
-    }
+}
+
+@media (max-width: 480px) {
+  .equipes-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas para celulares */
   }
-  
+
+  .equipe-button {
+    width: 60px;
+    height: 60px;
+  }
+}

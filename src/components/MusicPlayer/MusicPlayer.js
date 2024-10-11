@@ -26,7 +26,7 @@ import album1 from '../../assets/images/ShoutForVictory2.jpeg';
 import album2 from '../../assets/images/ShoutForVictory1.jpeg';
 import album3 from '../../assets/images/VictorysEdge1.jpeg';
 
-function MusicPlayer() {
+function MusicPlayer({ startPlaying }) {
   const [indiceMusica, setIndiceMusica] = useState(0);
   const [tocando, setTocando] = useState(false);
   const [tempoAtual, setTempoAtual] = useState('0:00');
@@ -62,6 +62,13 @@ function MusicPlayer() {
     },
   ];
 
+  // Novo useEffect para iniciar a reprodução se startPlaying for true
+  useEffect(() => {
+    if (startPlaying) {
+      setTocando(true);
+    }
+  }, [startPlaying]);
+
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.volume = volume;
@@ -78,7 +85,7 @@ function MusicPlayer() {
     }
   }, [tocando]);
 
-  // Novo useEffect para observar mudanças no indiceMusica
+  // Observa mudanças no indiceMusica
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.load();

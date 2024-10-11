@@ -1,0 +1,45 @@
+.detalhe-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(3, 2, 36, 0.418); /* Fundo semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+.detalhe-conteudo {
+    left: 126px;
+    position: relative;
+    background-color: transparent;
+    /* padding: 9px; */
+    border-radius: 8px;
+    max-width: 90%;
+    max-height: 90%;
+
+}
+  
+.botao-fechar {
+    position: absolute;
+    top: 44px;
+    right: 84px;
+    background: transparent;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    line-height: 1;
+    color: #fff;
+}
+  
+.imagem-detalhe {
+
+    max-width: 80%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+
