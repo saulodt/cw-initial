@@ -1,0 +1,47 @@
+/* EquipesParticipantes.css */
+
+.equipes-participantes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 10% auto;
+  }
+  
+  .equipe-button {
+    background: none;
+    border: none;
+    margin: 10px;
+    opacity: 0; /* Começa invisível */
+    animation: fadeIn 1s forwards;
+    cursor: pointer;
+    transition: transform 0.3s, opacity 0.3s;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .equipe-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0.5; /* Opacidade inicial da imagem */
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  
+  .equipe-button:hover img {
+    transform: scale(1.1);
+    opacity: 1;
+    /* box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); */
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1; /* Alterado para 1 para que o botão fique totalmente visível */
+    }
+  }
+  
